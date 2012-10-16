@@ -12,14 +12,10 @@ long int czas() {
 }
 
 
-// cc first.c -fopenmp
+// cc max_el.c -fopenmp -lrt ; ./a.out
 int main(){
 		int i;
-		int count = 100000; 
-		float vector[count];
-		int rand_max=65555;
-		float max_el =-rand_max;		
-		float scale=rand_max+1;		
+		int count = 100000; 			
 		long int start;
 		double suma = 0;
 		float rand_number;
@@ -32,7 +28,6 @@ int main(){
 				suma += rand_number;				
 				//printf("vector[%d] = %f\n",i, vector[i]);
 		}
-
 		printf("Policzylem w %fs\n", (double)(czas() - start)/(double)TIMER_SCALE);
 		printf("Suma = %f\n", suma);
 
