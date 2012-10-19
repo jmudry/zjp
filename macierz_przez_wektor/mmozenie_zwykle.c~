@@ -38,7 +38,7 @@ int main(int argc, char **argv){
 			}
 		}
 		execution_time = (double)(czas() - start)/(double)TIMER_SCALE; 
-	//	printf("Koniec obliczeń, czas obliczeń = %f\n", execution_time);
+		printf("Koniec obliczeń, czas obliczeń = %f\n", execution_time);
 		sum_time += execution_time;
 	}
 	printf("Koniec obliczeń, czas obliczeń =%f %f\n", sum_time, sum_time/count_loop);
