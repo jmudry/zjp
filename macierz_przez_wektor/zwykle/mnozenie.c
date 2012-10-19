@@ -12,12 +12,9 @@ int main(int argc, char **argv){
 		int size;
 		if (sscanf(argv[1], "%d", &size)) {
 			printf("Licze  dla rozmiaru: %d\n", size);
-			int count_loop = 1000;
-			double sum_time = 0;
 			long int start;
 			double execution_time;
-			// matrix[wiersz][kolumna]	
-			int matrix[size][size];
+			int matrix[size][size];// [wiersz][kolumna]	
 			int vector[size];
 			int result[size];
 			int i,j,k;
