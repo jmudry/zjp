@@ -58,7 +58,6 @@ int main(int argc, char **argv)
 			} 
 			printf("\n");
 		} 
-
 	MPI_Finalize();
 	return 0;
 }
