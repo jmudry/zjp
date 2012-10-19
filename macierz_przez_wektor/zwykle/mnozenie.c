@@ -45,12 +45,14 @@ int main(int argc, char **argv){
 				printf("Koniec obliczeń, czas obliczeń = %f\n", execution_time);
 
 			//wyświetlanie wyniku
-			for (i = 0; i < size; i++){
-				for (j = 0; j < size; j++){
-					printf("%d\t",matrix[i][j]);
+			if (size <= 16) {
+				for (i = 0; i < size; i++){
+					for (j = 0; j < size; j++){
+						printf("%d\t",matrix[i][j]);
+					}
+					printf("| %d\t|", vector[i]);
+					printf("| %d\t|\n", result[i]);
 				}
-				printf("| %d\t|", vector[i]);
-				printf("| %d\t|\n", result[i]);
 			}
 		} else {
 			printf("Zly paramter wywoałania programu! Musi to być liczba.\n");
