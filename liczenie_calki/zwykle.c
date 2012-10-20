@@ -36,12 +36,14 @@ int main(int argc, char **argv){
 	double execution_time;
 
 	if (argc > 1) {
-		sscanf(argv[1], "%d", &n);
+		if (!sscanf(argv[1], "%d", &n)) {
+			printf("Zły paramter! Musi być liczbą całkowitą\n");		
+		};
 	}	
 		
 	double suma;
 	start = czas();
-	printf("Całka = %f\n", liczCalke(a,b,n));
+	printf("Dla %d obiegów całka = %f\n ", n, liczCalke(a,b,n));
 	printf("Koniec obliczeń, czas obliczeń = %f\n", (double)(czas() - start)/(double)TIMER_SCALE);
 	
 
