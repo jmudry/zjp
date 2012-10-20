@@ -31,7 +31,7 @@ int main(int argc, char **argv){
 	int i, t;
 	double a = -2;
 	double b = 2;
-	double n = 400000;
+	double n = 4000000;
 	long int start;
 	double execution_time;
 	
