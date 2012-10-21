@@ -1,3 +1,15 @@
+/*
+Testowanie na czterech procesach jest bardziej wydajne niż generowanie punktów przez jeden proces 
+gdyż równie dobrze każdy może generować je dla siebie wyliczyć i zapomnieć o nich a musimy deklarować
+wielką tablicę.
+
+Dla 100 000 000 punktów otrzymano wynik średnio: 1.4 s 
+za to przy sekwencyjnym rozwiązaniu wynik było: 3.4 s
+Przy generowaniu punktów przez proces root na 4 procesach przy tych danych 
+program wysypuje sie ;) dla połowy mniej punktów osiąga czas: 3.4 czyli troche słabo...
+*/
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -13,7 +25,7 @@ long int czas() {
 
 int main(int argc, char **argv){	
 	long int n = 10000000;
-	srand(time(0));
+	srand(time(NULL));
 	long int in_circle = 0;
 	double execution_time;
 	long int start;
@@ -35,6 +47,10 @@ int main(int argc, char **argv){
 
 	long int local_in_circle = 0;
 	long int local_n = (long int) n/np;		
+	if (n % np != 0 && rank == ROOT) {
+		printf("niepodzielne:\t %d ", (int)n % np);
+		local_n += n % np;
+	}
 
 	if (rank == ROOT) {
 		start = czas();
