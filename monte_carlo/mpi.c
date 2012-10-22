@@ -25,7 +25,6 @@ long int czas() {
 
 int main(int argc, char **argv){	
 	long int n = 10000000;
-	srand(time(NULL));
 	long int in_circle = 0;
 	double execution_time;
 	long int start;
@@ -35,8 +34,9 @@ int main(int argc, char **argv){
 	MPI_Status status;
 	MPI_Init(&argc, &argv);
 	MPI_Comm_rank(MPI_COMM_WORLD, &rank);
-	MPI_Comm_size(MPI_COMM_WORLD, &np);	
-	
+	MPI_Comm_size(MPI_COMM_WORLD, &np);		
+	srand(czas()+rank);
+	printf("rank %d %d\n", rank, (int)rand());
 	if (argc > 1) {
 		if (!sscanf(argv[1], "%ld", &n)) {
 			if (rank == ROOT) {		

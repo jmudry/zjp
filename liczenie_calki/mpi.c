@@ -1,3 +1,13 @@
+/*
+	Testowane na cztero rdzenowym procesorze 
+	Dla podziału na 10000000 części uzyskujemy czas poprzez mpi: ~0.4s przy np=4
+	przy np = np. 8 uzyskujemy gorszy w granicach 0.5-0.6 tracimy tu czas na komunikacje oraz jest to jedynie emuloanie procesu 
+	bo sam w sobie nie ma 4 procesorów
+	przy np=2 mamy również gorsze rozwiązanie około 0.6 gdyż nie wykorzystaliśy do końca procesora:)
+	Zwykłym rozwiazaniem uzyskujemy czas: 0.86s
+	Jak widać w tym przypadku mamy lepsze rozwiązanie poprzez mpi
+	Dla podziału dziesięciokrotnie większym otrzymujemy czasy: mpi: ~7s sekwencyjne: 11s czyli podobnie jak wyżej;)
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -48,7 +58,6 @@ int main(int argc, char **argv){
 	MPI_Init(&argc, &argv);
 	MPI_Comm_rank(MPI_COMM_WORLD, &rank);
 	MPI_Comm_size(MPI_COMM_WORLD, &np);	
-	local_n = (int) n/np;
 	if (argc > 1) {
 		if (!sscanf(argv[1], "%d", &n)) {
 			if (rank == ROOT) {		
@@ -56,6 +65,7 @@ int main(int argc, char **argv){
 			}		
 		};
 	}	
+	local_n = (int) n/np;
 	local_a = (double) a+rank*local_n*h;
 	local_b = (double) local_a+local_n*h;	
 	if (rank == ROOT) {

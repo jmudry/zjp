@@ -1,13 +1,12 @@
+size=16
+
 all: mnozenie
 
-mnozenie: mnozenie.o
-	cc mnozenie.o -lrt -o mnozenie
-
-mnozenie.o: mnozenie.c
-	cc -c mnozenie.c
+mnozenie: mnozenie.c
+	$(MPICC) mnozenie.c -lrt -o mnozenie
 
 run: mnozenie
-	./mnozenie
+	./mnozenie $(size)
 
 clean: 
-	rm -f mnozenie *.o
+	rm -f mnozenie *.o *~ 
