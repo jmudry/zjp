@@ -3,7 +3,7 @@ size=16
 all: mnozenie
 
 mnozenie: mnozenie.c
-	$(MPICC) mnozenie.c -lrt -o mnozenie
+	gcc mnozenie.c -lrt -o mnozenie
 
 run: mnozenie
 	./mnozenie $(size)

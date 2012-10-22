@@ -35,7 +35,6 @@ int main(int argc, char **argv){
 				int i,j,k,l;
 				int res_matrix[size][podzial]; // [kolumna, wiersz]
 		
-				for (l = 0; l < count_loop_main; l++) {
 				
 					srand(time(0));
 
@@ -53,8 +52,9 @@ int main(int argc, char **argv){
 							vector[i] =  (int)(rand() % 10);	
 						}
 					}
-
-					start = czas();
+					if (rank == ROOT) {
+						start = czas();
+					}	
 					/* Wysłanie czśsci macierzy do procesów */
 					for (k =0; k< size; k++ ){
 						MPI_Scatter(matrix[k], podzial, MPI_INT, &res_matrix[k], podzial, MPI_INT, ROOT, MPI_COMM_WORLD); 
@@ -70,11 +70,8 @@ int main(int argc, char **argv){
 					}
 				
 					MPI_Gather(&res_result, podzial, MPI_INT, result, podzial, MPI_INT, ROOT, MPI_COMM_WORLD);	
-					execution_time = (double)(czas() - start)/(double)TIMER_SCALE; 
-					sum_execution_time += execution_time;
-				
 			
-				} 
+			
 					if (rank == ROOT) {
 						//wyświetlanie wyniku
 						if (size <= 16) {
@@ -87,7 +84,7 @@ int main(int argc, char **argv){
 							}
 					//	printf("\nKoniec obliczeń, czas obliczeń = %f\n", execution_time);
 					}
-					printf("\nKoniec obliczeń, średni czas obliczeń = %f\n", (double)execution_time/count_loop_main);
+					printf("\nKoniec obliczeń,czas obliczeń = %f\n", (double)(czas() - start)/(double)TIMER_SCALE);
 				}
 			} else {
 				if (rank == ROOT) {	printf("Źle dobrane parametry wielkość macierzy musi być podzielna przez liczbe procesów.\n"); }

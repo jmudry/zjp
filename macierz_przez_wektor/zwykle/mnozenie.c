@@ -1,3 +1,9 @@
+/*
+Przy rozwiązaniu mpi przy 4 procesach uzyskujemy średni czas 0.014
+przy rozwiazaniu sekwencyjnym: 0.004
+Widać dużą stratą czasu na komunikacji....
+*/
+
 #include <stdio.h>
 #include <time.h>
 #define TIMER_SCALE  1000000000
