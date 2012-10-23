@@ -32,7 +32,8 @@ czas obliczeń = 1.4 s
 Testowanie na czterech procesach jest bardziej wydajne niż generowanie punktów przez jeden proces 
 gdyż równie dobrze każdy może generować je dla siebie wyliczyć i zapomnieć o nich a musimy deklarować
 wielką tablicę i rozsyłać do innych procesów.
-
+Bez różnicy czy mamy metod sekwencyjną czy za pomocą mpi zawsze dostajemy conajmniej dwie dokładne liczby po przecinku.
+Liczba punktów losowych zbytnio nie gra roli gdyż zależy to od generatora liczb losowych (ilość różnych).
 # Liczenie całkie metodą trapezową
 ### Dane
 * podział na 10000000
