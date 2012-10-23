@@ -1,12 +1,12 @@
 /*
-Testowanie na czterech procesach jest bardziej wydajne niż generowanie punktów przez jeden proces 
-gdyż równie dobrze każdy może generować je dla siebie wyliczyć i zapomnieć o nich a musimy deklarować
-wielką tablicę.
+	Testowanie na czterech procesach jest bardziej wydajne niż generowanie punktów przez jeden proces 
+	gdyż równie dobrze każdy może generować je dla siebie wyliczyć i zapomnieć o nich a musimy deklarować
+	wielką tablicę.
 
-Dla 100 000 000 punktów otrzymano wynik średnio: 1.4 s 
-za to przy sekwencyjnym rozwiązaniu wynik było: 3.4 s
-Przy generowaniu punktów przez proces root na 4 procesach przy tych danych 
-program wysypuje sie ;) dla połowy mniej punktów osiąga czas: 3.4 czyli troche słabo...
+	Dla 100 000 000 punktów otrzymano wynik średnio: 1.4 s 
+	za to przy sekwencyjnym rozwiązaniu wynik było: 3.4 s
+	Przy generowaniu punktów przez proces root na 4 procesach przy tych danych 
+	program wysypuje sie ;) dla połowy mniej punktów osiąga czas: 3.4 czyli troche słabo...
 */
 
 

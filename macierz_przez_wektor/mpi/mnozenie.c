@@ -73,6 +73,7 @@ int main(int argc, char **argv){
 			
 			
 					if (rank == ROOT) {
+						execution_time = (double)(czas() - start)/(double)TIMER_SCALE; 
 						//wyświetlanie wyniku
 						if (size <= 16) {
 							for (i = 0; i < size; i++){
@@ -84,7 +85,7 @@ int main(int argc, char **argv){
 							}
 					//	printf("\nKoniec obliczeń, czas obliczeń = %f\n", execution_time);
 					}
-					printf("\nKoniec obliczeń,czas obliczeń = %f\n", (double)(czas() - start)/(double)TIMER_SCALE);
+					printf("Koniec obliczeń, czas obliczeń = %f\n", execution_time);
 				}
 			} else {
 				if (rank == ROOT) {	printf("Źle dobrane parametry wielkość macierzy musi być podzielna przez liczbe procesów.\n"); }
