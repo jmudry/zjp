@@ -1,6 +1,7 @@
 Wszystko było testowane na procesorze cztero rdzeniowym i5 RAM=4GB
 
 # Mnożenie macierzy kwadratowej przez wektor
+### Dane
 * wielkość macierzy 4000
 * liczba procesów 4
 
@@ -14,6 +15,7 @@ czas obliczeń = 0.063981
 Zbyt wiele komunikacji na tak prostych działaniach.
 
 # Monte Carlo
+### Dane
 * liczba punktów: 100 000 000 
 * liczba procesów: 4
 
@@ -32,6 +34,7 @@ gdyż równie dobrze każdy może generować je dla siebie wyliczyć i zapomnie�
 wielką tablicę i rozsyłać do innych procesów.
 
 # Liczenie całkie metodą trapezową
+### Dane
 * podział na 10000000
 * liczba procesów: 4 
 
