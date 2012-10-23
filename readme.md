@@ -50,8 +50,9 @@ mamy również gorsze rozwiązanie około 0.6 gdyż nie wykorzystaliśy do końc
 czas obliczeń ~ 0.86s
 
 ### wniosek 
-Jak widać w tym przypadku mamy lepsze rozwiązanie poprzez mpi \n
+Jak widać w tym przypadku mamy lepsze rozwiązanie poprzez mpi 
 Dla podziału dziesięciokrotnie większym otrzymujemy czasy: mpi: ~7s sekwencyjne: 11s czyli podobnie jak wyżej;)
+Wynik w obu przypadkach bardzo zadowalający. Oczywiście nie różni sie.
 
 
 
