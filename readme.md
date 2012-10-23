@@ -31,6 +31,25 @@ Testowanie na czterech procesach jest bardziej wydajne niż generowanie punktów
 gdyż równie dobrze każdy może generować je dla siebie wyliczyć i zapomnieć o nich a musimy deklarować
 wielką tablicę i rozsyłać do innych procesów.
 
+# Liczenie całkie metodą trapezową
+* podział na 10000000
+* liczba procesów: 4 
+
+### MPI 
+czas obliczeń ~ 0.4 s
+* przy np = np. 8 
+uzyskujemy gorszy w granicach 0.5-0.6 tracimy tu czas na komunikacje oraz jest to jedynie emuloanie procesu  bo sam w sobie nie ma 4 procesorów
+* przy np=2 
+mamy również gorsze rozwiązanie około 0.6 gdyż nie wykorzystaliśy do końca procesora:)
+
+### Sekwencyjne 
+czas obliczeń ~ 0.86s
+
+### wniosek 
+Jak widać w tym przypadku mamy lepsze rozwiązanie poprzez mpi \n
+Dla podziału dziesięciokrotnie większym otrzymujemy czasy: mpi: ~7s sekwencyjne: 11s czyli podobnie jak wyżej;)
+
+
 
 
 
